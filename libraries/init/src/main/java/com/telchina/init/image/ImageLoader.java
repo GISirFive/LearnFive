@@ -1,4 +1,4 @@
-package com.telchina.init.ext;
+package com.telchina.init.image;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -46,7 +46,7 @@ public class ImageLoader implements IImageLoader {
                 .tasksProcessingOrder(QueueProcessingType.LIFO)
                 // default
                 .imageDownloader(new BaseImageDownloader(context, 5 * 1000, 20 * 1000))
-                .defaultDisplayImageOptions(ImageLoaderOptions.publicable)
+                .defaultDisplayImageOptions(ImageLoaderOptions._default)
                 .writeDebugLogs()// 打印日志
                 .build();
 //        L.writeLogs(false);
@@ -74,7 +74,8 @@ public class ImageLoader implements IImageLoader {
      */
     @Override
     public void display(String uri, ImageView imageView) {
-
+        uri = getRealURI(uri);
+        BaseLoader.displayImage(uri, imageView);
     }
 
     /**
@@ -85,7 +86,7 @@ public class ImageLoader implements IImageLoader {
      */
     @Override
     public void displayMini(String uri, ImageView imageView) {
-
+        BaseLoader.displayImage(uri, imageView, ImageLoaderOptions._mini);
     }
 
     /**
