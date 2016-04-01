@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">爱群发</string>
+	<string-array name="app_photo_extention">
+		<item>jpg</item>
+		<item>png</item>
+		<item>jpeg</item>
+	</string-array>
 </resources>

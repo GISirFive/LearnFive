@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/init" />
+            <option value="$PROJECT_DIR$/libraries/jbsms" />
+            <option value="$PROJECT_DIR$/libraries/jbsocial" />
             <option value="$PROJECT_DIR$/libraries/pub" />
             <option value="$PROJECT_DIR$/libraries/telchina" />
           </set>
@@ -22,6 +24,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/init" />
+            <option value="$PROJECT_DIR$/libraries/jbsms" />
+            <option value="$PROJECT_DIR$/libraries/jbsocial" />
             <option value="$PROJECT_DIR$/libraries/pub" />
             <option value="$PROJECT_DIR$/libraries/telchina" />
           </set>

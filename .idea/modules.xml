@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MassSender.iml" filepath="$PROJECT_DIR$/MassSender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LearnFive.iml" filepath="$PROJECT_DIR$/LearnFive.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/init/init.iml" filepath="$PROJECT_DIR$/libraries/init/init.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/jbsms/jbsms.iml" filepath="$PROJECT_DIR$/libraries/jbsms/jbsms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/jbsocial/jbsocial.iml" filepath="$PROJECT_DIR$/libraries/jbsocial/jbsocial.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/pub/pub.iml" filepath="$PROJECT_DIR$/libraries/pub/pub.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/telchina/telchina.iml" filepath="$PROJECT_DIR$/libraries/telchina/telchina.iml" />

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StepsViewIndicator">
+        <!-- 阶段数 -->
+        <attr name="sv_numOfSteps" format="integer" />
+        <!-- 已完成进度颜色 -->
+        <attr name="sv_progress_color_indicator" format="color"/>
+        <!-- 标签颜色 -->
+        <attr name="sv_label_color_indicator" format="color"/>
+        <!-- 未完成进度颜色 -->
+        <attr name="sv_bar_color_indicator" format="color"/>
+        <!-- 未完成标签字体大小 -->
+        <attr name="sv_lable_size_indicator" format="dimension"/>
+        <!-- 当前进度标签字体大小 -->
+        <attr name="sv_progress_lable_size_indicator" format="dimension"/>
+        <!-- 进度线宽度 -->
+        <attr name="sv_line_height" format="dimension"/>
+        <!-- 指示点半径 -->
+        <attr name="sv_thumb_radius" format="dimension"/>
+        <!-- 阴影宽度 -->
+        <attr name="sv_circle_radius" format="dimension"/>
+        <!-- 左右边距 -->
+        <attr name="sv_padding" format="dimension"/>
+    </declare-styleable>
+</resources>
