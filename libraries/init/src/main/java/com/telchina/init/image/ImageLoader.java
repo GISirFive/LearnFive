@@ -12,6 +12,7 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.telchina.pub.image.IImageLoader;
 import com.telchina.pub.image.ImageLoadingListener;
 import com.telchina.pub.image.LoaderType;
+import com.telchina.pub.utils.Config;
 import com.telchina.pub.utils.ConfigUtils;
 
 import java.io.File;
@@ -33,7 +34,9 @@ public class ImageLoader implements IImageLoader {
     private void init(Context context) {
         ImageLoaderOptions.initInstance();
         File cacheDir = StorageUtils.getIndividualCacheDirectory(context,
-                ConfigUtils.getFromConfig(ConfigUtils.KEY.cachePublic));
+                /*ConfigUtils.getFromConfig(ConfigUtils.KEY.cachePublic)*/
+                //Modify by zh
+                ConfigUtils.cachePublic);
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .threadPoolSize(5)
                 .threadPriority(Thread.NORM_PRIORITY)
@@ -173,7 +176,8 @@ public class ImageLoader implements IImageLoader {
         if (!uri.contains("http://") && !uri.contains("file://")
                 && !uri.contains("drawable://") && !uri.contains("assets://")
                 && !uri.contains("content://"))
-            return ConfigUtils.getFromConfig(ConfigUtils.KEY.server) + uri;
+//            return ConfigUtils.getFromConfig(ConfigUtils.KEY.server) + uri;
+            return ConfigUtils.server + uri;
         return uri;
     }
 }

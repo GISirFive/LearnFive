@@ -39,7 +39,7 @@ public class ConfigUtils {
      */
     public static final String LOG_TAG = "输出";
 
-//    private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("config");
+    private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("config");
 //
 //    public enum KEY {
 //        /**
