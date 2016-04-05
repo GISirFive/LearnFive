@@ -1,0 +1,61 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- AppCompat主题 -->
+    <style name="AppCompatTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/app_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/app_colorPrimaryDark</item>
+        <item name="colorAccent">@color/app_theme</item>
+        <item name="toolbarStyle">@style/ACT_toolbarStyle</item>
+        <item name="actionBarStyle">@style/ACT_actionBarStyle</item>
+        <item name="dialogTheme">@style/Theme.AppCompat.Light.Dialog</item>
+        <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert</item>
+        <item name="alertDialogStyle">@style/AlertDialog.AppCompat.Light</item>
+        <item name="textColorAlertDialogListItem">@color/abc_primary_text_material_light</item>
+    </style>
+
+    <style name="AppCompatTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ACT_actionBarStyle" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/ACT_AS_titleTextAppearance</item>
+    </style>
+    
+    <style name="ACT_toolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/ACT_AS_titleTextAppearance</item>
+    </style>
+
+    <style name="ACT_AS_titleTextAppearance" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/app_text_16_middle</item>
+    </style>
+
+    <style name="circularprogressbutton_default">
+        <item name="cpb_cornerRadius">8dp</item>
+        <item name="cpb_selectorIdle">@drawable/style_circularbt_theme</item>
+        <item name="cpb_colorIndicator">@color/app_theme</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="progressDialog" parent="@android:style/Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowBackground">@drawable/bg_dialog_1</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+
+    <!-- RadioButton按钮样式1 -->
+    <style name="pbl_radiobutton1">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:background">@drawable/style_rb_1</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/app_text_14</item>
+        <item name="android:textColor">@color/app_text_3</item>
+        <item name="android:gravity">center_horizontal|top</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+
+</resources>

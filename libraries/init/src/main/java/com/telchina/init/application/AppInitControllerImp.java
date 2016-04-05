@@ -42,6 +42,7 @@ public class AppInitControllerImp implements IAppInitController {
     public AppInitControllerImp(Application application) {
         mApplication = application;
 
+
 //        try {
 //            DB_VERSION = Integer.parseInt(ConfigUtils
 //                    .getFromConfig(KEY.dbVersion));
