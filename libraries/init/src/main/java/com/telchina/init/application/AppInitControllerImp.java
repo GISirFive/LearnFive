@@ -6,10 +6,11 @@ import com.github.yoojia.anyversion.AnyVersion;
 import com.github.yoojia.anyversion.Version;
 import com.github.yoojia.anyversion.VersionParser;
 import com.loopj.android.http.PersistentCookieStore;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.telchina.init.http.IRequestControllerImp;
+import com.telchina.init.image.ImageLoader;
+import com.telchina.pub.utils.Config;
 import com.xiaomi.mistatistic.sdk.MiStatInterface;
 import com.xiaomi.mistatistic.sdk.URLStatsRecorder;
 import com.xiaomi.mistatistic.sdk.controller.HttpEventFilter;
@@ -43,12 +44,11 @@ public class AppInitControllerImp implements IAppInitController {
         mApplication = application;
 
 
-//        try {
-//            DB_VERSION = Integer.parseInt(ConfigUtils
-//                    .getFromConfig(KEY.dbVersion));
-//        } catch (Exception e) {
-//
-//        }
+        try {
+            DB_VERSION = Config.DB_VERSION;
+        } catch (Exception e) {
+
+        }
     }
 
     @Override
@@ -115,8 +115,7 @@ public class AppInitControllerImp implements IAppInitController {
 
     @Override
     public IImageLoader getImageLoader() {
-
-//        return ImageLoader.getInstance(mApplication);
+        ImageLoader.init(mApplication);
         return null;
     }
 

@@ -13,6 +13,6 @@ public enum LoaderType {
     _MINI,
     /**微型缩略图（比迷你型更小的缩略图）*/
     _MICRO,
-    /**自定义图片大小*/
-    _CUSTOM,
+    /**图标*/
+    _ICON,
 }

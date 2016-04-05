@@ -6,14 +6,14 @@ import android.view.View;
 /**
  * Created by GISirFive on 2016-3-28.
  */
-public interface ImageLoadingListener {
+public interface IBaseImageLoadingListener {
     /**
      * Is called when an error was occurred during image loading
      *
      * @param imageUri   Loading image URI
      * @param view       View for image. Can be <b>null</b>.
      */
-    void onLoadingFailed(String imageUri, View view);
+    void onLoadingFailed(String imageUri, View view, FailedReason reason);
 
     /**
      * Is called when image is loaded successfully (and displayed in View if one was specified)

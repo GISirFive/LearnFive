@@ -12,7 +12,7 @@
 
         <widget.circleimageview.CircleImageView
             android:id="@+id/imageView_portrait"
-            android:src="@mipmap/bg_portrait_default"
+            android:src="@drawable/bg_portrait_default"
             android:layout_width="48dp"
             android:layout_height="48dp" />
 

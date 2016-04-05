@@ -1,71 +1,35 @@
 package com.telchina.init.image;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.widget.ImageView;
 
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
-import com.nostra13.universalimageloader.utils.StorageUtils;
+import com.telchina.pub.image.IBaseImageLoadingListener;
 import com.telchina.pub.image.IImageLoader;
-import com.telchina.pub.image.ImageLoadingListener;
 import com.telchina.pub.image.LoaderType;
-import com.telchina.pub.utils.Config;
-import com.telchina.pub.utils.ConfigUtils;
 
 import java.io.File;
 
 /**
- * Created by GISirFive on 2016-3-30.
+ * Created by GISirFive on 2016-4-1.
  */
-public class ImageLoader implements IImageLoader {
+public class ImageLoader{
 
-    /**
-     * 开源库，加载图片的核心类
-     **/
-    private static com.nostra13.universalimageloader.core.ImageLoader BaseLoader = null;
+    private static IImageLoader ImageLoader = null;
 
-    public ImageLoader(Context context) {
-        init(context);
-    }
-
-    private void init(Context context) {
-        ImageLoaderOptions.initInstance();
-        File cacheDir = StorageUtils.getIndividualCacheDirectory(context,
-                /*ConfigUtils.getFromConfig(ConfigUtils.KEY.cachePublic)*/
-                //Modify by zh
-                ConfigUtils.cachePublic);
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
-                .threadPoolSize(5)
-                .threadPriority(Thread.NORM_PRIORITY)
-                // .denyCacheImageMultipleSizesInMemory()//当同一个Uri获取不同大小的图片，缓存到内存时，只缓存一个
-                // 内存缓存5M
-                .memoryCacheSize(5 * 1024 * 1024)
-                // 缓存到内存中的图片的最大长宽
-                .memoryCacheExtraOptions(512, 512)
-                .diskCache(new UnlimitedDiskCache(cacheDir))
-                .tasksProcessingOrder(QueueProcessingType.LIFO)
-                // default
-                .imageDownloader(new BaseImageDownloader(context, 5 * 1000, 20 * 1000))
-                .defaultDisplayImageOptions(ImageLoaderOptions._default)
-                .writeDebugLogs()// 打印日志
-                .build();
-//        L.writeLogs(false);
-        BaseLoader = com.nostra13.universalimageloader.core.ImageLoader.getInstance();
-        BaseLoader.init(config);
+    public static void init(Context context){
+        if(ImageLoader == null){
+            DisplayOptions.init();
+            ImageLoader = new IImageLoaderImp(context);
+        }
     }
 
     /**
      * 获取图片显示核心类
      *
      * @return
-     * @author GISirFive
      */
-    @Override
-    public com.nostra13.universalimageloader.core.ImageLoader getLoader() {
-        return BaseLoader;
+    public static com.nostra13.universalimageloader.core.ImageLoader getLoader() {
+        return (com.nostra13.universalimageloader.core.ImageLoader) ImageLoader.getLoader();
     }
 
     /**
@@ -73,12 +37,9 @@ public class ImageLoader implements IImageLoader {
      *
      * @param uri
      * @param imageView
-     * @author GISirFive
      */
-    @Override
-    public void display(String uri, ImageView imageView) {
-        uri = getRealURI(uri);
-        BaseLoader.displayImage(uri, imageView);
+    public static void display(String uri, ImageView imageView) {
+        ImageLoader.display(uri, imageView);
     }
 
     /**
@@ -87,9 +48,8 @@ public class ImageLoader implements IImageLoader {
      * @param uri
      * @param imageView
      */
-    @Override
-    public void displayMini(String uri, ImageView imageView) {
-        BaseLoader.displayImage(uri, imageView, ImageLoaderOptions._mini);
+    public static void displayMini(String uri, ImageView imageView) {
+        ImageLoader.displayMini(uri, imageView);
     }
 
     /**
@@ -99,21 +59,8 @@ public class ImageLoader implements IImageLoader {
      * @param imageView
      * @param type
      */
-    @Override
-    public void display(String uri, ImageView imageView, LoaderType type) {
-
-    }
-
-    /**
-     * 公共图片显示，以默认方式加载图片{@link LoaderType#_DEFAULT}，并显示在imageView中
-     *
-     * @param uri
-     * @param imageView
-     * @param listener
-     */
-    @Override
-    public void display(String uri, ImageView imageView, ImageLoadingListener listener) {
-
+    public static void display(String uri, ImageView imageView, LoaderType type) {
+        ImageLoader.display(uri, imageView, type);
     }
 
     /**
@@ -124,9 +71,8 @@ public class ImageLoader implements IImageLoader {
      * @param type
      * @param listener
      */
-    @Override
-    public void display(String uri, ImageView imageView, LoaderType type, ImageLoadingListener listener) {
-
+    public static void display(String uri, ImageView imageView, LoaderType type, IBaseImageLoadingListener listener) {
+        ImageLoader.display(uri, imageView, type, listener);
     }
 
     /**
@@ -136,9 +82,8 @@ public class ImageLoader implements IImageLoader {
      * @param type
      * @param listener
      */
-    @Override
-    public void load(String uri, LoaderType type, ImageLoadingListener listener) {
-
+    public static void load(String uri, LoaderType type, IBaseImageLoadingListener listener) {
+        ImageLoader.load(uri, type, listener);
     }
 
     /**
@@ -154,30 +99,9 @@ public class ImageLoader implements IImageLoader {
      * </pre>
      *
      * @param uri
-     * @return
-     * @author GISirFive
+     * @return File
      */
-    @Override
-    public File getCacheFile(String uri) {
-        return null;
-    }
-
-    /**
-     * 处理URI
-     *
-     * @param uri
-     * @return
-     * @author GISirFive
-     */
-    private String getRealURI(String uri) {
-        if (TextUtils.isEmpty(uri) || uri.trim().isEmpty()) {
-            throw new NullPointerException("传入的图片加载路径为空！");
-        }
-        if (!uri.contains("http://") && !uri.contains("file://")
-                && !uri.contains("drawable://") && !uri.contains("assets://")
-                && !uri.contains("content://"))
-//            return ConfigUtils.getFromConfig(ConfigUtils.KEY.server) + uri;
-            return ConfigUtils.server + uri;
-        return uri;
+    public static File getCacheFile(String uri, LoaderType type) {
+        return ImageLoader.getCacheFile(uri, type);
     }
 }

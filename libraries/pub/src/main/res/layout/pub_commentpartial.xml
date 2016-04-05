@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:headerDividersEnabled="true"
         android:footerDividersEnabled="true"
-        android:divider="@mipmap/bg_divider_2"
+        android:divider="@drawable/bg_divider_2"
         android:dividerHeight="1px" />
 
 </LinearLayout>
