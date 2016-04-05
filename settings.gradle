@@ -1,1 +1,2 @@
-include ':app', ':libraries:telchina', ':libraries:pub', ':libraries:init', ':libraries:jbsms', ':libraries:jbsocial'
+include ':app', ':libraries:telchina', ':libraries:pub', ':libraries:init',
+        ':libraries:jbsms', ':libraries:jbsocial', ':libraries:imagepicker'

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MassSender.iml" filepath="$PROJECT_DIR$/MassSender.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/imagepicker/imagepicker.iml" filepath="$PROJECT_DIR$/libraries/imagepicker/imagepicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/init/init.iml" filepath="$PROJECT_DIR$/libraries/init/init.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/jbsms/jbsms.iml" filepath="$PROJECT_DIR$/libraries/jbsms/jbsms.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/jbsocial/jbsocial.iml" filepath="$PROJECT_DIR$/libraries/jbsocial/jbsocial.iml" />

@@ -9,7 +9,7 @@
 		            <solid android:color="@color/app_theme"/>
 		        </shape>
             </item>
-            <item android:drawable="@mipmap/bg_navigation"></item>
+            <item android:drawable="@drawable/bg_navigation"></item>
         </layer-list>
     </item>
 </selector>
