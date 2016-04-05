@@ -34,7 +34,6 @@ public interface IImageLoader {
      * 获取图片显示核心类
      *
      * @return
-     * @author GISirFive
      */
     Object getLoader();
 
@@ -42,7 +41,6 @@ public interface IImageLoader {
      * 以默认方式加载图片{@link LoaderType#_DEFAULT}，并显示在imageView中
      * @param uri
      * @param imageView
-     * @author GISirFive
      */
     void display(String uri, ImageView imageView);
 
@@ -62,21 +60,13 @@ public interface IImageLoader {
     void display(String uri, ImageView imageView, LoaderType type);
 
     /**
-     * 公共图片显示，以默认方式加载图片{@link LoaderType#_DEFAULT}，并显示在imageView中
-     * @param uri
-     * @param imageView
-     * @param listener
-     */
-    void display(String uri, ImageView imageView, ImageLoadingListener listener);
-
-    /**
      * 自定义加载方式{@link LoaderType}，并显示在imageView中
      * @param uri
      * @param imageView
      * @param type
      * @param listener
      */
-    void display(String uri, ImageView imageView, LoaderType type, ImageLoadingListener listener);
+    void display(String uri, ImageView imageView, LoaderType type, IBaseImageLoadingListener listener);
 
     /**
      * 加载图片，通过接口返回加载结果
@@ -84,22 +74,14 @@ public interface IImageLoader {
      * @param type
      * @param listener
      */
-    void load(String uri, LoaderType type, ImageLoadingListener listener);
+    void load(String uri, LoaderType type, IBaseImageLoadingListener listener);
 
     /**
-     * 根据uri获取对应的文件<br>
-     * 图片返回顺序：
-     * <pre>
-     *     缓存的默认图片
-     *     缓存的原图
-     *     缓存的迷你型缩略图
-     *     缓存的微型缩略图
-     *     自定义大小的图片
-     *     NULL（无缓存）
-     * </pre>
-     * @param uri
-     * @return
-     * @author GISirFive
+     * 根据图片加载地址、图片加载类型，获取对应的文件<br>
+     * @param uri   图片加载地址
+     * @param type  图片加载类型，若type为null，则图片将按照以下顺序返回：<br/>
+     *              缓存的默认图片、缓存的原图、缓存的迷你型缩略图、缓存的微型缩略图、NULL（无缓存）
+     * @return File
      */
-    File getCacheFile(String uri);
+    File getCacheFile(String uri, LoaderType type);
 }
