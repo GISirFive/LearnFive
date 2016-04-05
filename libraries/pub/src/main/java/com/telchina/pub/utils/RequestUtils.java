@@ -33,8 +33,7 @@ public class RequestUtils {
      */
     public static String getUrlWithFlag(RequestCode flag) {
 
-//		String server = ConfigUtils.getFromConfig(KEY.server);
-        String server = "http://10.10.41.73:8080/pms/";
+		String server = Config.get(Config.KEY.SERVER);
         String api = "";
         switch (flag) {
             default:

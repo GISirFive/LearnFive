@@ -11,7 +11,7 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.telchina.pub.image.IImageLoader;
 import com.telchina.pub.image.IBaseImageLoadingListener;
 import com.telchina.pub.image.LoaderType;
-import com.telchina.pub.utils.ConfigUtils;
+import com.telchina.pub.utils.Config;
 
 import java.io.File;
 
@@ -31,8 +31,7 @@ class IImageLoaderImp implements IImageLoader {
 
     private void init(Context context) {
         DisplayOptions.init();
-        File cacheDir = StorageUtils.getIndividualCacheDirectory(context,
-                ConfigUtils.getFromConfig(ConfigUtils.KEY.cachePublic));
+        File cacheDir = StorageUtils.getIndividualCacheDirectory(context, Config.get(Config.KEY.NAME_CACHE_DIR));
         UnlimitedDiskCache diskCache = new UnlimitedDiskCache(cacheDir);
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
                 .threadPoolSize(5)

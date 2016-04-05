@@ -7,7 +7,7 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.telchina.pub.image.FailedReason;
 import com.telchina.pub.image.LoaderType;
-import com.telchina.pub.utils.ConfigUtils;
+import com.telchina.pub.utils.Config;
 
 import java.io.File;
 
@@ -70,7 +70,7 @@ class Utils {
             }
         }
         if(!hasPrefix)
-            uri = ConfigUtils.getFromConfig(ConfigUtils.KEY.server) + uri;
+            uri = Config.get(Config.KEY.SERVER) + uri;
         return uri;
     }
 
