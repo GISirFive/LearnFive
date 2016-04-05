@@ -37,7 +37,7 @@ import cn.smssdk.gui.layout.SizeHelper;
 
 //import com.jb.ext.sms.R;
 import com.mob.tools.FakeActivity;
-import com.telchina.jbsms.R;
+import com.telchina.sms.R;
 import com.utils.SystemBarTintManager;
 
 /** 智能验证码页面*/

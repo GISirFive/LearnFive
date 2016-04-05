@@ -53,7 +53,7 @@ import cn.smssdk.utils.SMSLog;
 //import com.jb.ext.sms.R;
 import com.mob.tools.FakeActivity;
 import com.mob.tools.utils.DeviceHelper;
-import com.telchina.jbsms.R;
+import com.telchina.sms.R;
 import com.utils.SystemBarTintManager;
 
 /** 验证码输入页面*/
