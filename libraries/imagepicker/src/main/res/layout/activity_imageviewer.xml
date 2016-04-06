@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.widget.photoview.HackyViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </com.widget.photoview.HackyViewPager>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/app_backgroud_2"
+        android:paddingBottom="6dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="6dp" >
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:checked="true" />
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/style_bt_lighttheme_theme"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/app_text_16_middle" />
+    </RelativeLayout>
+
+</LinearLayout>

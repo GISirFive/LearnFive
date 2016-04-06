@@ -53,7 +53,7 @@ public class AppInitControllerImp implements IAppInitController {
 
     @Override
     public void init() {
-        initLog();
+        /*initLog();
         // 安全性
         initSecurity();
         // 版本更新
@@ -67,7 +67,7 @@ public class AppInitControllerImp implements IAppInitController {
         // 创建数据库
         initDatabase();
         // 统计信息
-        initStatistics();
+        initStatistics();*/
 
     }
 
@@ -115,8 +115,7 @@ public class AppInitControllerImp implements IAppInitController {
 
     @Override
     public IImageLoader getImageLoader() {
-        ImageLoader.init(mApplication);
-        return null;
+        return ImageLoader.init(mApplication);
     }
 
     @Override

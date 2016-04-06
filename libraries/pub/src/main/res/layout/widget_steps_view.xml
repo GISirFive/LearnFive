@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <widget.stepsview.StepsViewIndicator
+    <com.telchina.pub.widget.stepsview.StepsViewIndicator
         android:id="@+id/steps_indicator_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

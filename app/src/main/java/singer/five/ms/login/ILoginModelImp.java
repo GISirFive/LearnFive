@@ -7,7 +7,6 @@ import org.json.JSONObject;
 import com.telchina.pub.construction.AbsBaseModel;
 import com.telchina.pub.construction.base.IModelCallback;
 import com.telchina.pub.utils.RequestUtils;
-import com.telchina.init.http.RequestParams;
 
 /**
  * Created by GISirFive on 2016-3-22.
@@ -42,9 +41,9 @@ public class ILoginModelImp extends AbsBaseModel implements ILoginModel {
 
     @Override
     public void login(LoginParams params) {
-        RequestParams requestParams = new RequestParams();
-        requestParams.put("name",params.userName);
-        requestParams.put("password", params.password);
-        post(RequestUtils.RequestCode.USER_LOGIN, requestParams);
+//        RequestParams requestParams = new RequestParams();
+//        requestParams.put("name",params.userName);
+//        requestParams.put("password", params.password);
+//        post(RequestUtils.RequestCode.USER_LOGIN, requestParams);
     }
 }

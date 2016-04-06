@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-	<widget.pulltorefresh.PtrFrameLayout
+	<com.widget.pulltorefresh.PtrFrameLayout
 		android:id="@+id/layout_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:ptr_pull_to_fresh="true" >
 
-		<widget.pulltorefresh.header.MaterialHeader
+		<com.widget.pulltorefresh.header.MaterialHeader
 	        android:id="@+id/layout_header"
 	        android:layout_width="match_parent"
             android:layout_height="64dp"
             android:paddingTop="6dp"
         	android:paddingBottom="6dp" />
 		
-	    <widget.pulltorefresh.loadmore.LoadMoreListViewContainer
+	    <com.widget.pulltorefresh.loadmore.LoadMoreListViewContainer
 	        android:id="@+id/layout_footer"
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent" >
@@ -37,9 +37,9 @@
 		        android:descendantFocusability="blocksDescendants" >
 		    </ListView>
 	        
-	    </widget.pulltorefresh.loadmore.LoadMoreListViewContainer>
+	    </com.widget.pulltorefresh.loadmore.LoadMoreListViewContainer>
     
-	</widget.pulltorefresh.PtrFrameLayout>
+	</com.widget.pulltorefresh.PtrFrameLayout>
     
 
 </RelativeLayout>

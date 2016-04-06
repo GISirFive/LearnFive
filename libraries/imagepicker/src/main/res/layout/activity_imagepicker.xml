@@ -1,0 +1,71 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.widget.stickygridheaders.StickyGridHeadersGridView
+            android:id="@+id/gridview_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:clipChildren="true"
+            android:gravity="center"
+            android:horizontalSpacing="3dip"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="3dip" />
+
+        <RelativeLayout
+            android:id="@+id/layout_bottombar"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_backgroud_2"
+            android:paddingBottom="6dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="6dp" >
+
+            <Button
+                android:id="@+id/button_preview"
+                android:layout_width="72dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/style_bt_nav_trans"
+                android:text="预览"
+                android:textColor="@color/app_theme"
+                android:textSize="@dimen/app_text_16_middle" />
+
+            <Button
+                android:id="@+id/button_ok"
+                android:layout_width="72dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/style_bt_lighttheme_theme"
+                android:text="确定"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/app_text_16_middle" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- The navigation drawer -->
+    <ListView
+        android:id="@+id/listview_content"
+        android:layout_width="256dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        android:cacheColorHint="@android:color/transparent"
+        android:descendantFocusability="blocksDescendants"
+        android:divider="@color/app_backgroud_3"
+        android:dividerHeight="1px"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        android:choiceMode="singleChoice" />
+   
+</android.support.v4.widget.DrawerLayout>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_actionbar"
-    android:layout_width="match_parent"
-    android:layout_height="52dp"
-    android:background="@color/app_theme" >
-        
-	<ImageButton 
-	    android:id="@+id/back"
-		android:layout_width="52dp"
-		android:layout_height="match_parent"
-		android:background="@drawable/style_bt_nav_trans"
-		android:scaleType="centerInside"
-		android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"
-		android:padding="12dp" />
-	    
-	<TextView
-	    android:id="@+id/textview_title"
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent"
-	    android:layout_weight="1"
-	    android:layout_marginRight="52dp"
-	    android:gravity="center"
-	    android:textColor="@android:color/white"
-	    android:textSize="@dimen/app_text_16_middle" />
-	
+<LinearLayout android:id="@+id/layout_actionbar"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="52dp"
+              android:background="@color/app_theme">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="52dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/style_bt_nav_trans"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"/>
+
+    <TextView
+        android:id="@+id/textview_title"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="52dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/app_text_16_middle"/>
+
 </LinearLayout>

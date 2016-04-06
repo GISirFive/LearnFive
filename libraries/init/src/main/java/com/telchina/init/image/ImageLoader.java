@@ -16,11 +16,12 @@ public class ImageLoader{
 
     private static IImageLoader ImageLoader = null;
 
-    public static void init(Context context){
+    public static IImageLoader init(Context context){
         if(ImageLoader == null){
             DisplayOptions.init();
             ImageLoader = new IImageLoaderImp(context);
         }
+        return ImageLoader;
     }
 
     /**

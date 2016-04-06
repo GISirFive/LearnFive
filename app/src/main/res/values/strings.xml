@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">MassSender</string>
     <string name="title_activity_login">登录</string>
 
     <!-- Strings related to login -->
