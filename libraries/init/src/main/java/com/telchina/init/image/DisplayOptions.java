@@ -38,7 +38,7 @@ public class DisplayOptions {
                 .cacheInMemory(false)
                 // 设置下载的图片是否缓存在SD卡中
                 .cacheOnDisk(false)
-                .bitmapConfig(Bitmap.Config.ARGB_4444)//RGB_565模式消耗的内存比ARGB_8888模式少两倍
+                .bitmapConfig(Bitmap.Config.RGB_565)//RGB_565模式消耗的内存比ARGB_8888模式少两倍
                 .displayer(new FadeInBitmapDisplayer(300));// 淡入
         return builder;
     }

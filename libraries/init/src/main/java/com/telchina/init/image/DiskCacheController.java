@@ -40,7 +40,11 @@ class DiskCacheController implements com.nostra13.universalimageloader.core.list
     }
 
     public void load() {
-        ImageLoader.getLoader().displayImage(mUri, mImageView, Utils.getOptions(mLoaderType), this, this);
+        if (mLoaderType == LoaderType._DEFAULT || mLoaderType == LoaderType._ORIGIN) {
+            ImageLoader.getLoader().displayImage(mUri, mImageView, Utils.getOptions(mLoaderType));
+        } else {
+            ImageLoader.getLoader().loadImage(mUri, Utils.getStandardImageSize(mLoaderType), Utils.getOptions(mLoaderType), this, this);
+        }
     }
 
     /**
@@ -80,7 +84,10 @@ class DiskCacheController implements com.nostra13.universalimageloader.core.list
         DiskCache diskCache = ImageLoader.getLoader().getDiskCache();
         String uri = Utils.getRealURI(imageUri, mLoaderType);
         try {
-            diskCache.save(uri, loadedImage);
+            boolean b = diskCache.save(uri, loadedImage);
+            if (b) {
+                ImageLoader.getLoader().displayImage(uri, mImageView, Utils.getOptions(mLoaderType));
+            }
             if (mListenerPresenter != null)
                 mListenerPresenter.onLoadingComplete(imageUri, view, loadedImage);
         } catch (IOException e) {
