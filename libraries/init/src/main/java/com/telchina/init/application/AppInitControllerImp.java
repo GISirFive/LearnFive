@@ -115,7 +115,8 @@ public class AppInitControllerImp implements IAppInitController {
 
     @Override
     public IImageLoader getImageLoader() {
-        return ImageLoader.init(mApplication);
+//        return ImageLoader.init(mApplication);
+        return new com.telchina.init.glide.IImageLoaderImp(mApplication);
     }
 
     @Override

@@ -31,20 +31,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppCompatTheme.NoActionBar">
+        <meta-data ></meta-data>
         <activity
             android:name="com.telchina.image.activity.ImagePicker"
             android:label="asdas"
             android:screenOrientation="portrait" >
+
+        </activity>
+        <activity
+            android:name="singer.five.ms.activity.LoginActivity"
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity
-            android:name="singer.five.ms.activity.LoginActivity"
-            android:label="@string/title_activity_login">
-
         </activity>
     </application>
 

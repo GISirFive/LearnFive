@@ -3,6 +3,7 @@ package com.telchina.init.image;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
@@ -60,7 +61,7 @@ class IImageLoaderImp implements IImageLoader {
      * @author GISirFive
      */
     @Override
-    public com.nostra13.universalimageloader.core.ImageLoader getLoader() {
+    public Object getLoader() {
         return BaseLoader;
     }
 

@@ -1,6 +1,7 @@
 package com.telchina.init.image;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -84,7 +85,10 @@ class DiskCacheController implements com.nostra13.universalimageloader.core.list
         DiskCache diskCache = ImageLoader.getLoader().getDiskCache();
         String uri = Utils.getRealURI(imageUri, mLoaderType);
         try {
+            long time1 = System.currentTimeMillis();
             boolean b = diskCache.save(uri, loadedImage);
+            long time2 = System.currentTimeMillis();
+            Log.i("输出", (time2 - time1) + "---" + imageUri);
             if (b) {
                 ImageLoader.getLoader().displayImage(uri, mImageView, Utils.getOptions(mLoaderType));
             }

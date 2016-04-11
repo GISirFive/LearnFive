@@ -308,4 +308,9 @@ public class ImagePicker extends AbsBaseActivity implements OnClickListener,
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        setContentView(R.layout.pub_view_null);
+        super.onDestroy();
+    }
 }

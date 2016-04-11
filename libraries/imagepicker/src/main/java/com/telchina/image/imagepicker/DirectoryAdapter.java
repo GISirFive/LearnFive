@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.telchina.image.R;
 import com.telchina.image.bean.PhotoDirectory;
 import com.telchina.image.bean.PhotoItem;
@@ -63,10 +64,10 @@ public class DirectoryAdapter extends BaseAdapter {
         PhotoDirectory directory = getItem(position);
         holder.title.setText(directory.getName());
         PhotoItem photo = directory.getFirstPhoto();
-        BaseApp.ImageLoader.displayMini(photo.getmPath(), holder.thumbnail);
+        Glide.with(mInflater.getContext()).load(photo.getmPath()).into(holder.thumbnail);
+//        BaseApp.ImageLoader.displayMini(photo.getmPath(), holder.thumbnail);
 //        BaseApp.getImageLoader().displayThumbMicro(photo.getmPath(), holder.thumbnail);
         holder.count.setText(directory.getCount() + "张");
-
         return convertView;
     }
 

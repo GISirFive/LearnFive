@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.telchina.image.R;
 import com.telchina.image.bean.PhotoItem;
 import com.telchina.pub.application.BaseApp;
@@ -76,7 +77,8 @@ public class PhotoAdapter extends BaseAdapter implements
             holder.checked.setVisibility(View.GONE);
         }
 //        BaseApp.getImageLoader().displayThumbMicro(photo.getmPath(), holder.thumbnail);
-        BaseApp.ImageLoader.display(photo.getmPath(), holder.thumbnail, LoaderType._MICRO);
+//        BaseApp.ImageLoader.display(photo.getmPath(), holder.thumbnail, LoaderType._MICRO);
+        Glide.with(mInflater.getContext()).load(photo.getmPath()).into(holder.thumbnail);
         return convertView;
     }
 

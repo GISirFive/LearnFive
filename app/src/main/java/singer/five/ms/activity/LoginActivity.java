@@ -1,5 +1,6 @@
 package singer.five.ms.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -12,6 +13,8 @@ import com.orhanobut.logger.Logger;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import com.telchina.image.activity.ImagePicker;
 import com.telchina.pub.construction.AbsBaseActivity;
 import singer.five.ms.R;
 import singer.five.ms.login.ILoginView;
@@ -49,6 +52,9 @@ public class LoginActivity extends AbsBaseActivity implements ILoginView {
                 mLoginPresenter.login();
                 break;
             case R.id.mBtnRegister:
+                Intent intent = new Intent(this, ImagePicker.class);
+                intent.putExtra(ImagePicker.FLAG_INPUT_SELECTNUM, 4);
+                startActivity(intent);
                 break;
         }
     }
