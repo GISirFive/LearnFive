@@ -35,9 +35,9 @@ public class DisplayOptions {
     public static Builder getDefaultOptions() {
         Builder builder = new Builder()
                 // 设置下载的图片是否缓存在内存中
-                .cacheInMemory(false)
+                .cacheInMemory(true)
                 // 设置下载的图片是否缓存在SD卡中
-                .cacheOnDisk(false)
+                .cacheOnDisk(true)
                 .bitmapConfig(Bitmap.Config.RGB_565)//RGB_565模式消耗的内存比ARGB_8888模式少两倍
                 .displayer(new FadeInBitmapDisplayer(300));// 淡入
         return builder;
